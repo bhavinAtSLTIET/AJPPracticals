@@ -39,7 +39,7 @@ public class Practical1 {
 
     public void printData() throws SQLException {
         stmt = con.createStatement();
-        stmt.execute("SELECT * FROM users");
+        stmt.executeQuery("SELECT * FROM users");
         rs = stmt.getResultSet();
         System.out.println("Displaying table data!");
         System.out.println("id | fname | sname | email");
@@ -58,18 +58,18 @@ public class Practical1 {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Scanner sc = new Scanner(System.in);
-        Practical1 pr1 = new Practical1();
+        try (Scanner sc = new Scanner(System.in)) {
+            Practical1 pr1 = new Practical1();
 
-        System.out.print("Enter fname: ");
-        String fname = sc.next();
-        System.out.print("Enter sname: ");
-        String sname = sc.next();
-        System.out.print("Enter email: ");
-        String email = sc.next();
+            System.out.print("Enter fname: ");
+            String fname = sc.next();
+            System.out.print("Enter sname: ");
+            String sname = sc.next();
+            System.out.print("Enter email: ");
+            String email = sc.next();
 
-        pr1.insertData(fname, sname, email);
-        pr1.printData();
-        sc.close();
+            pr1.insertData(fname, sname, email);
+            pr1.printData();
+        }
     }
 }

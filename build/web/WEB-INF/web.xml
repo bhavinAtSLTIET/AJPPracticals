@@ -16,6 +16,23 @@
         <servlet-name>Home</servlet-name>
         <servlet-class>Practical3.Home</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Practical4</servlet-name>
+        <servlet-class>Practical4.Practical4</servlet-class>
+        <init-param>
+            <param-name>InitParamName</param-name>
+            <param-value>ThisIsTheInitParamValue</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Practical5</servlet-name>
+        <servlet-class>Practical5.Practical5</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetVisitorCount</servlet-name>
+        <servlet-class>Practical7.GetVisitorCount</servlet-class>
+
+    </servlet>
     <servlet-mapping>
         <servlet-name>Practical2</servlet-name>
         <url-pattern>/Practical2</url-pattern>
@@ -32,9 +49,25 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Practical4</servlet-name>
+        <url-pattern>/Practical4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Practical5</servlet-name>
+        <url-pattern>/Practical5</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetVisitorCount</servlet-name>
+        <url-pattern>/GetVisitorCount</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <context-param>
+        <param-name>ContextParamName</param-name>
+        <param-value>ThisIsTheContextParamValue</param-value>
+    </context-param>
 </web-app>

@@ -31,7 +31,22 @@
     <servlet>
         <servlet-name>GetVisitorCount</servlet-name>
         <servlet-class>Practical7.GetVisitorCount</servlet-class>
-
+    </servlet>
+    <servlet>
+        <servlet-name>GetUserDetails</servlet-name>
+        <servlet-class>Practical7_5.GetUserDetailsForSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetUserDetailsForCookies</servlet-name>
+        <servlet-class>Practical8.GetUserDetailsForCookies</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showButtonForCookies</servlet-name>
+        <servlet-class>Practical8.showButtonForCookies</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showCookies</servlet-name>
+        <servlet-class>Practical8.showCookies</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Practical2</servlet-name>
@@ -60,6 +75,22 @@
     <servlet-mapping>
         <servlet-name>GetVisitorCount</servlet-name>
         <url-pattern>/GetVisitorCount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetUserDetails</servlet-name>
+        <url-pattern>/GetUserDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetUserDetailsForCookies</servlet-name>
+        <url-pattern>/GetUserDetailsForCookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showButtonForCookies</servlet-name>
+        <url-pattern>/showButtonForCookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showCookies</servlet-name>
+        <url-pattern>/showCookies</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

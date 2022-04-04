@@ -29,10 +29,6 @@
         <servlet-class>Practical5.Practical5</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GetVisitorCount</servlet-name>
-        <servlet-class>Practical7.GetVisitorCount</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>GetUserDetails</servlet-name>
         <servlet-class>Practical7_5.GetUserDetailsForSession</servlet-class>
     </servlet>
@@ -71,10 +67,6 @@
     <servlet-mapping>
         <servlet-name>Practical5</servlet-name>
         <url-pattern>/Practical5</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetVisitorCount</servlet-name>
-        <url-pattern>/GetVisitorCount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetUserDetails</servlet-name>

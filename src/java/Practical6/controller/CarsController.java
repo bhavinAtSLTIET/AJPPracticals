@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Practical7_5;
+package Practical6.controller;
 
+import Practical6.model.CarModel;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Bhavin Vasara
  */
-public class GetUserDetailsForSession extends HttpServlet {
+public class CarsController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,17 +32,20 @@ public class GetUserDetailsForSession extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String name = request.getParameter("name");
+        int founded = Integer.parseInt(request.getParameter("founded"));
+        String description = request.getParameter("description");
+        CarModel car = new CarModel();
+        car.setName(name);
+        car.setFounded(founded);
+        car.setDescription(description);
+        request.setAttribute("car", car);
+        RequestDispatcher rd = request.getRequestDispatcher("ViewCar");
+        rd.forward(request, response);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet GetUserDetails</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet GetUserDetails at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("<!DOCTYPE html><html><body>");
+            out.println("</body></html>");
         }
     }
 

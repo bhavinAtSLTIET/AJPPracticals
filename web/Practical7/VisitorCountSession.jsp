@@ -9,12 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Visitor Count</title>
     </head>
     <body>
         <%
             try {
-                //TODO:Find what is throwing null pointer Exception
                 if (session.isNew()) {
                     session.setAttribute("count", 1);
                     out.println("Welcome New user!");

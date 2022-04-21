@@ -24,10 +24,10 @@
                     items.add(request.getParameter("item"));
                     session.setAttribute("items", items);
                 } else {
-                            List<String> items = new ArrayList<>();
-                            items.add(request.getParameter("item"));
-                            session.setAttribute("items", items);
-                        }
+                    List<String> items = new ArrayList<>();
+                    items.add(request.getParameter("item"));
+                    session.setAttribute("items", items);
+                }
                     } else if (request.getParameter("delete") != null) {
                         List<String> items = (List<String>) session.getAttribute("items");
                         items.remove(Integer.parseInt(request.getParameter("delete")));
@@ -36,19 +36,18 @@
             if (!session.isNew()) {
                 if (session.getAttribute("items") != null) {
                     List<String> items = (List<String>) session.getAttribute("items");
-                            if (!items.isEmpty()) {
-
-                                out.println("Items in cart: <form method='POST'><ol>");
-                                int index = 0;
-                                for (String item : items) {
-                                    out.println("<li>" + item + " <button type='submit' name='delete' value='" + index + "'>Delete</button></li>");
-                                    index++;
+                    if (!items.isEmpty()) {
+                        out.println("Items in cart: <form method='POST'><ol>");
+                        int index = 0;
+                        for (String item : items) {
+                                        out.println("<li>" + item + " <button type='submit' name='delete' value='" + index + "'>Delete</button></li>");
+                                        index++;
+                                    }
+                                    out.println("</ol></form>");
+                                } else {
+                                    out.println("No items in cart!");
                                 }
-                                out.println("</ol></form>");
-                            } else {
-                                out.println("No items in cart!");
                             }
-                        }
             }
         %>
         <form action="" method="POST">

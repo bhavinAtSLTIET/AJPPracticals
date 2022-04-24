@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class RegisterStudents_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class DeleteUser_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -44,22 +44,24 @@ public final class RegisterStudents_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Register Students</title>\n");
+      out.write("        <title>Delete User</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("\t<form method=\"POST\" action=\"/AJPPracticals/AddUser.jsp\">\n");
-      out.write("\t    Enrollment No.: <input type=\"number\" name=\"entrollment\" required><br>\n");
-      out.write("\t    First Name: <input type=\"text\" name=\"Fname\" required><br>\n");
-      out.write("\t    Last Name: <input type=\"text\" name=\"Lname\" required><br>\n");
-      out.write("\t    Semester: <input type=\"number\" name=\"sem\" required><br>\n");
-      out.write("\t    Contact No.: <input type=\"number\" name=\"mobile\" required><br>\n");
-      out.write("\t    <input type=\"submit\" name=\"submit\" value=\"Register\">\n");
-      out.write("\t</form>\n");
+      out.write("        ");
+
+	    if (request.getParameter("id") != null) {
+		int id = Integer.parseInt(request.getParameter("id"));
+		out.println("Deleting "+id);
+	    }
+	    else{
+		out.println("Id is required!");
+	    }
+	
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

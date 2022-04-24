@@ -11,11 +11,20 @@ package Practical10.model;
  */
 public class UserModel {
 
+    private int id;
     private long enrollment;
     private String Fname;
     private String Lname;
     private int sem;
     private long mobile;
+
+    public int getId() {
+	return id;
+    }
+
+    public void setId(int id) {
+	this.id = id;
+    }
 
     public long getEnrollment() {
 	return enrollment;

@@ -3,8 +3,11 @@ package org.apache.jsp.Practical10;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.util.List;
+import Practical10.model.UserModel;
+import Practical10.contoller.UserConroller;
 
-public final class RegisterStudents_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class SearchModifyDelete_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -45,22 +48,65 @@ public final class RegisterStudents_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Register Students</title>\n");
+      out.write("        <title>Search Modify Delete</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("\t<form method=\"POST\" action=\"/AJPPracticals/AddUser.jsp\">\n");
-      out.write("\t    Enrollment No.: <input type=\"number\" name=\"entrollment\" required><br>\n");
-      out.write("\t    First Name: <input type=\"text\" name=\"Fname\" required><br>\n");
-      out.write("\t    Last Name: <input type=\"text\" name=\"Lname\" required><br>\n");
-      out.write("\t    Semester: <input type=\"number\" name=\"sem\" required><br>\n");
-      out.write("\t    Contact No.: <input type=\"number\" name=\"mobile\" required><br>\n");
-      out.write("\t    <input type=\"submit\" name=\"submit\" value=\"Register\">\n");
-      out.write("\t</form>\n");
-      out.write("    </body>\n");
+      out.write("\t<table>\n");
+      out.write("\t    <th>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tEnrollment\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tFirst Name\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tLast Name\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tSemester\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tMobile No.\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tUpdate\n");
+      out.write("\t    </td>\n");
+      out.write("\t    <td>\n");
+      out.write("\t\tDelete\n");
+      out.write("\t    </td>\n");
+      out.write("\t</th>\n");
+      out.write("\n");
+      out.write("\t");
+
+	    UserConroller controller = new UserConroller();
+	    List<UserModel> users = controller.getUsers();
+	    if (!users.isEmpty()) {
+		for (UserModel user : users) {
+		    out.println("<tr>");
+		    out.println("<td>"+user.getEnrollment()+"");
+		    out.println("<td>"+user.getFname()+"");
+		    out.println("<td>"+user.getLname()+"");
+		    out.println("<td>"+user.getSem()+"");
+		    out.println("<td>"+user.getMobile()+"");
+		    out.println("<td><a href='Practical10/UpdateUser.jsp?id="+user.getId()+"'>Update</a></td>");
+		    out.println("<td><a href='Practical10/DeleteUser.jsp?id="+user.getId()+"'>Delete</a></td>");
+		    out.println("</tr>");
+		}
+	    }
+	    else{
+		out.println("No User Records Found!");
+	    }
+
+	
+      out.write("\n");
+      out.write("    </table>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

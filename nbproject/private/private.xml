@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/web/WEB-INF/glassfish-web.xml</file>
-            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/web/Practical9/getUserCart.jsp</file>
+            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/src/java/Practical10/contoller/UserConroller.java</file>
+            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/src/java/Practical10/model/UserModel.java</file>
+            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/web/Practical10/RegisterStudents.jsp</file>
+            <file>file:/D:/Bhavin/Study/Sem%206/AJP%203160707/Practicals/Practicals/AJPPracticals/web/AddUser.jsp</file>
         </group>
     </open-files>
 </project-private>

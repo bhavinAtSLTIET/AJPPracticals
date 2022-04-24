@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Practical10.model.UserModel" %>
-<%@page import="Practical10.contoller.UserConroller" %>
+<%@page import="Practical10.contoller.UserController" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,19 +23,17 @@
 		user.setSem(Integer.parseInt(request.getParameter("sem")));
 		user.setMobile(Long.parseLong(request.getParameter("mobile")));
 
-		UserConroller userConroller = new UserConroller();
-		if (userConroller.addUserToDB(user)){
+		UserController userConroller = new UserController();
+		if (userConroller.addUserToDB(user)) {
 		    out.println("Registration Successful!");
-		}
-		else{
+		} else {
 		    out.println("Could not Register!");
 		}
 
-
-	    }
-	    else{
+	    } else {
 		response.sendRedirect("Practical10/RegisterStudents.jsp");
 	    }
 	%>
+	<a href="SearchModifyDelete.jsp">Show Users</a>
     </body>
 </html>

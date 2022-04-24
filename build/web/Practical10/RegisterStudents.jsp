@@ -13,7 +13,7 @@
         <title>Register Students</title>
     </head>
     <body>
-	<form method="POST" action="/AJPPracticals/AddUser.jsp">
+	<form method="POST" action="AddUser.jsp">
 	    Enrollment No.: <input type="number" name="entrollment" required><br>
 	    First Name: <input type="text" name="Fname" required><br>
 	    Last Name: <input type="text" name="Lname" required><br>
@@ -21,5 +21,6 @@
 	    Contact No.: <input type="number" name="mobile" required><br>
 	    <input type="submit" name="submit" value="Register">
 	</form>
+	<a href="SearchModifyDelete.jsp">Show Users</a>
     </body>
 </html>

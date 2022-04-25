@@ -22,7 +22,7 @@
 
 	    <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
 			       url = "jdbc:mysql://localhost:3306/students"
-			       user = "root"  password = ""  />
+			       user = "root"  password = ""/>
 
 
 	    <jsp:useBean id="now" class="java.util.Date" />
